@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+ {% load static %}
+<center><h3>Yerevan Beauty Clinic</h3><br/><hr>
+    <p style="color: brown">This is a test for make a website... Author : {{First_Name}},{{Last_Name}} !</p></center>
+
+{% if First_Name == 'Ali' %}
+    <p>{{Last_Name|upper}}.........</p>
+     <img src="{% static 'img_1.jpg' %}" alt="Girl" width="192" height="256">
+
+{% elif First_Name == 'AliReza' %}
+    <p>{{First_Name|upper}}.........</p>
+    <img src="{% static 'img_2.jpg' %}" alt="Girl" width="192" height="256">
+
+{% else %}
+    <h3>FIRST NAME----</h3><br>
+    {% for i in allfield %}
+       {{i.first_name}}<br>
+        <br>
+    {% endfor %}
+
+
+{% endif %}
+</body>
+</html>
