@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 from string import Template
 
 from django.conf.global_settings import STATIC_ROOT
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%4&-xevf)7f(p9srrz0jyw@t)_ua!r17m&u^dtwl%@7z(i7@#*'
+SECRET_KEY = os.environ.get('SECRET_KEY') #'django-insecure-%4&-xevf)7f(p9srrz0jyw@t)_ua!r17m&u^dtwl%@7z(i7@#*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
